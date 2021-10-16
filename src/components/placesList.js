@@ -32,18 +32,14 @@ function PlacesList () {
         fetchAndSavePlaces();
     }, [fetchAndSavePlaces]);
 
-    if (error) {
-        return <p>Ooops! Something went wrong, please try again.</p>
-    }
-
-    if (!places) {
-        return <p>Loading...</p>
-    }
-
     return (
-        <Wrapper data-testid='places-list'>
+        <Wrapper data-testid='places-list-wrapper'>
+            {error && <p>Ooops! Something went wrong, please try again.</p>}
+
             {
-                places.map((place) => {
+                !places
+                    ? <p>Loading</p>
+                    : places.map((place) => {
                     return <SinglePlace key={place.id} {...place} />
                 })
             }
