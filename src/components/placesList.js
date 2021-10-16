@@ -4,7 +4,12 @@ import styled from 'styled-components';
 import SinglePlace from './singlePlace';
 
 const Wrapper = styled.div`
-    background: green;
+    padding: 200px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
 `;
 
 function PlacesList () {
